@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ذكرياتنا 💝</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* عام */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Great Vibes', cursive;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffc3e1 0%, #ff9ec9 25%, #ffb3d9 50%, #ffc8e8 75%, #ffd9f0 100%);
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        /* خلفية القلوب */
+        .hearts-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 105, 180, 0.3);
+            transform: rotate(45deg);
+            animation: floatHeart linear infinite;
+        }
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 105, 180, 0.3);
+            border-radius: 50%;
+        }
+        .heart::before { top: -15px; left: 0; }
+        .heart::after { left: 15px; top: 0; }
+        .heart:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 30%; animation-duration: 15s; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 50%; animation-duration: 18s; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 70%; animation-duration: 14s; animation-delay: 6s; }
+        .heart:nth-child(5) { left: 85%; animation-duration: 16s; animation-delay: 1s; }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3em;
+            color: #ff1493;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+        }
+
+        /* فيديو */
+        .memory-video {
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            margin: 0 auto 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+        }
+        .memory-video iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* وصف الفيديو */
+        .video-caption {
+            color: #d946a6;
+            font-size: 1.3em;
+            margin-bottom: 50px;
+        }
+
+        /* بطاقات الذكريات */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .memory-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+        .memory-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        .memory-caption {
+            font-size: 1.1em;
+            color: #d946a6;
+            font-weight: bold;
+        }
+
+        /* زر الإنتقال */
+        .final-cta {
+            margin-top: 50px;
+        }
+        .next-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            transition: all 0.3s ease;
+        }
+        .next-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+        }
+
+        @media (max-width: 768px){
+            .page-title { font-size: 2em; }
+            .memory-video { height: 250px; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hearts-background">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">💕 ذكرياتنا الجميلة 💕</h1>
+
+        <!-- فيديو -->
+        <div class="memory-video">
+            <iframe 
+                src="https://www.youtube.com/embed/QoVd8rOnzyw?si=J1XGTQt6wG0yHjv2&amp;start=29&autoplay=1" 
+                title="أغنيتنا المفضلة"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="video-caption">الأغنية اللي بتفكرنا بأحلى أوقاتنا 💖</p>
+
+        <!-- بطاقات الذكريات -->
+        <div class="timeline">
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="{{ url_for('static', filename='images/photo1.jpg') }}" alt="ذكرى 1">
+                </div>
+                <p class="memory-caption">اول خروجه سوا 💖</p>
+            </div>
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="{{ url_for('static', filename='images/photo2.jpg') }}" alt="ذكرى 2">
+                </div>
+                <p class="memory-caption">التووحفه</p>
+            </div>
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="ذكرى 3">
+                </div>
+                <p class="memory-caption">يوم بجد💗</p>
+            </div>
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="{{ url_for('static', filename='images/photo4.jpg') }}" alt="ذكرى 4">
+                </div>
+                <p class="memory-caption">اول مره نتكلمم</p>
+            </div>
+            <div class="memory-card">
+                <div class="memory-image">
+                    <img src="{{ url_for('static', filename='images/photo2.jpg') }}" alt="ذكرى 2">
+                </div>
+                <p class="memory-caption">احلي يوم</p>
+        </div>
+
+        <div class="final-cta">
+            <p class="cta-text">✨ في حاجة مهمة عايز أقولهالك ✨</p>
+            <a href="/message" class="next-btn">❤️ دوس هنا ❤️</a>
+        </div>
+    </div>
+</body>
+</html>              

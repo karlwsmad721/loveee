@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسالة رومانسية 💌</title>
+    <!-- خط مزخرف عربي -->
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Scheherazade New', serif; /* خط عربي مزخرف */
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffc3e1 0%, #ff9ec9 25%, #ffb3d9 50%, #ffc8e8 75%, #ffd9f0 100%);
+            overflow-x: hidden;
+        }
+
+        /* Hearts Background Animation */
+        .hearts-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 105, 180, 0.3);
+            transform: rotate(45deg);
+            animation: float 12s infinite ease-in-out;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 105, 180, 0.3);
+            border-radius: 50%;
+        }
+
+        .heart::before { top: -15px; left: 0; }
+        .heart::after { left: 15px; top: 0; }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 50%; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 70%; animation-delay: 6s; }
+        .heart:nth-child(5) { left: 85%; animation-delay: 1s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(45deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(120vh) rotate(45deg); opacity: 0; }
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* صندوق الرسالة */
+        .welcome-box {
+            background: rgba(255, 255, 255, 0.9); /* خلفية بيضاء */
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* العنوان */
+        .fancy-title {
+            font-size: 3em;
+            color: #ff1493;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+        }
+
+        /* نص الرسالة */
+        .romantic-text {
+            font-size: 1.4em;
+            line-height: 2;
+            color: #d946a6;
+            margin-bottom: 30px;
+        }
+
+        /* النص المميز */
+        .highlight {
+            color: #ff1493;
+            font-weight: bold;
+        }
+
+        /* زر البدء */
+        .start-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .fancy-title { font-size: 2em; }
+            .romantic-text { font-size: 1.1em; }
+        }
+    </style>
+</head>
+<body class="landing-page">
+    <div class="hearts-background">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <div class="container">
+        <div class="welcome-box">
+            <h1 class="fancy-title">❤️ إليكِ 💖</h1>
+            <p class="romantic-text">
+                أحلى وأغلى شخص في حياتي <br>
+                وكل يوم بيعدي بيزيد حبي ليكي لنبملابينمانمبالمنبالنمانمبا أكتر <br>
+                أنتِ سبب سعادتبيملنالبامي وابتسامتي <br>
+                <span class="highlight">تعالي نشوف كام حاجة حلوة كده مع بعض</span>
+            </p>
+            <a href="/journey" class="start-btn">
+                <span>✨ start journey  ✨</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+

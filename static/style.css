@@ -1,0 +1,556 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffc3e1 0%, #ff9ec9 25%, #ffb3d9 50%, #ffc8e8 75%, #ffd9f0 100%);
+    overflow-x: hidden;
+}
+
+/* Hearts Background Animation */
+.hearts-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 105, 180, 0.3);
+    transform: rotate(45deg);
+    animation: float 10s infinite ease-in-out;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 105, 180, 0.3);
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    left: 15px;
+    top: 0;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    top: -10%;
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    top: -20%;
+    animation-delay: 2s;
+    animation-duration: 10s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    top: -15%;
+    animation-delay: 4s;
+    animation-duration: 12s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    top: -10%;
+    animation-delay: 6s;
+    animation-duration: 9s;
+}
+
+.heart:nth-child(5) {
+    left: 85%;
+    top: -20%;
+    animation-delay: 1s;
+    animation-duration: 11s;
+}
+
+.heart:nth-child(6) {
+    left: 20%;
+    top: -25%;
+    animation-delay: 3s;
+    animation-duration: 13s;
+}
+
+
+/* Journey  */
+
+        /* عام */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Great Vibes', cursive;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffc3e1 0%, #ff9ec9 25%, #ffb3d9 50%, #ffc8e8 75%, #ffd9f0 100%);
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        /* خلفية القلوب */
+        .hearts-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 105, 180, 0.3);
+            transform: rotate(45deg);
+            animation: floatHeart linear infinite;
+        }
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 105, 180, 0.3);
+            border-radius: 50%;
+        }
+        .heart::before { top: -15px; left: 0; }
+        .heart::after { left: 15px; top: 0; }
+        .heart:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 30%; animation-duration: 15s; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 50%; animation-duration: 18s; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 70%; animation-duration: 14s; animation-delay: 6s; }
+        .heart:nth-child(5) { left: 85%; animation-duration: 16s; animation-delay: 1s; }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3em;
+            color: #ff1493;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+        }
+
+        /* فيديو */
+        .memory-video {
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            margin: 0 auto 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+        }
+        .memory-video iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* وصف الفيديو */
+        .video-caption {
+            color: #d946a6;
+            font-size: 1.3em;
+            margin-bottom: 50px;
+        }
+
+        /* بطاقات الذكريات */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .memory-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+        .memory-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        .memory-caption {
+            font-size: 1.1em;
+            color: #d946a6;
+            font-weight: bold;
+        }
+
+        /* زر الإنتقال */
+        .final-cta {
+            margin-top: 50px;
+        }
+        .next-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            transition: all 0.3s ease;
+        }
+        .next-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+        }
+
+        @media (max-width: 768px){
+            .page-title { font-size: 2em; }
+            .memory-video { height: 250px; }
+        }
+
+    
+/* Message Page */
+.message-box {
+    padding: 60px 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+    text-align: center;
+    border: 3px solid rgba(255, 182, 193, 0.5);
+    max-width: 700px;
+    animation: fadeInScale 1s ease-out;
+}
+
+.message-title {
+    font-size: 2.8em;
+    color: #ff1493;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+}
+
+.message-content {
+    margin-bottom: 40px;
+}
+
+.message-text {
+    font-size: 1.4em;
+    line-height: 2;
+    color: #d946a6;
+}
+
+.big-heart {
+    font-size: 3em;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.highlight-message {
+    color: #ff1493;
+    font-weight: bold;
+    font-size: 1.3em;
+    display: block;
+    margin-top: 20px;
+}
+
+.signature {
+    border-top: 2px solid #ffb3d9;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.signature p {
+    font-size: 1.2em;
+    color: #d946a6;
+    margin: 10px 0;
+}
+
+.your-name {
+    font-size: 1.5em !important;
+    color: #ff1493 !important;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .welcome-box, .message-box {
+        padding: 40px 25px;
+    }
+    
+    .fancy-title {
+        font-size: 2em;
+    }
+    
+    .romantic-text {
+        font-size: 1.1em;
+    }
+    
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    .memory-image {
+        height: 250px;
+    }
+    /* Video container - نفس ستايل الصور */
+.memory-video {
+    width: 100%;
+    height: 300px; /* ارتفاع ثابت زي الصور */
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ffb3d9, #ffc8e8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memory-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover; /* بيخلي الفيديو يغطي الحاوية */
+}
+
+/* Responsive للموبايل */
+@media (max-width: 768px) {
+    .memory-video {
+        height: 250px; /* نفس ارتفاع الصور في الموبايل */
+    }
+}
+/* Login Page */
+body.login-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffc3e1 0%, #ff9ec9 25%, #ffb3d9 50%, #ffc8e8 75%, #ffd9f0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* صندوق اللوجين */
+.login-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 50px 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+/* أيقونة القفل */
+.lock-icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* حقل الباسورد */
+.password-input {
+    padding: 15px 20px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    border: 2px solid #ffb3d9;
+    outline: none;
+    width: 80%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.password-input:focus {
+    border-color: #ff1493;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+/* زر الدخول */
+.login-button {
+    padding: 15px 50px;
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+}
+
+/* رسائل الخطأ */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Hearts Background */
+.hearts-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 105, 180, 0.3);
+    transform: rotate(45deg);
+    animation: floatHeart linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 105, 180, 0.3);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.heart::after {
+    left: 15px;
+    top: 0;
+}
+
+/* توزيع القلوب عشوائي */
+.heart:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-duration: 15s; animation-delay: 2s; }
+.heart:nth-child(3) { left: 50%; animation-duration: 18s; animation-delay: 4s; }
+.heart:nth-child(4) { left: 70%; animation-duration: 14s; animation-delay: 6s; }
+.heart:nth-child(5) { left: 85%; animation-duration: 16s; animation-delay: 1s; }
+.heart:nth-child(6) { left: 25%; animation-duration: 20s; animation-delay: 3s; }
+
+/* حركة القلب تصعد للأعلى */
+@keyframes floatHeart {
+    0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 40px 25px;
+    }
+
+    .password-input {
+        width: 100%;
+    }
+}
+/* الصفحة كاملة */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffc3e1 0%, #ff9ec9 25%, #ffb3d9 50%, #ffc8e8 75%, #ffd9f0 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* الحاوية للوردة */
+.rose-container {
+    text-align: center;
+}
+
+/* الزر الوردة الكبير */
+.rose-btn {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+    background: radial-gradient(circle at 30% 30%, #ff5aad, #ff1493);
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* تأثير عند المرور بالماوس */
+.rose-btn:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 20px 60px rgba(255, 20, 147, 0.8);
+}
+
+
+
+}                         

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Password</title>
+
+    <!-- خطوط Google Fonts المزخرفة -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* تطبيق الخطوط المزخرفة */
+        body.login-page {
+            font-family: 'Dancing Script', 'Pacifico', cursive;
+        }
+
+        .login-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            color: #ff1493;
+        }
+
+        .login-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: #d946a6;
+            margin-bottom: 30px;
+        }
+
+        .password-input, .login-button, .error-message {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+</head>
+<body class="login-page">
+    <div class="hearts-background">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+</div>
+
+    
+    <div class="login-container">
+        <div class="lock-icon">🔒</div>
+        
+        <h1 class="login-title">Enter Password</h1>
+        <p class="login-subtitle">Unlock 💖</p>
+
+        <form action="/login" method="POST" class="login-form">
+            <input 
+                type="password" 
+                name="password" 
+                placeholder=" " 
+                required
+                class="password-input"
+            >
+            
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+
+            <button type="submit" class="login-button">
+                دخول 💕
+            </button>
+        </form>
+
+        <div class="hearts-row">
+            <span class="heart">❤️</span>
+            <span class="heart">💕</span>
+            <span class="heart">💖</span>
+            <span class="heart">💕</span>
+            <span class="heart">❤️</span>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
